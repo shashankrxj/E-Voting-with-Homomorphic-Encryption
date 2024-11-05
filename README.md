@@ -53,7 +53,7 @@ When a vote is cast, it is added to the candidate's existing encrypted vote coun
 - **Tallying Votes**: Administrators can calculate the election results by decrypting the vote totals and viewing the results.
 - **Resetting the Election**:Use the reset button to clear votes and reset the database for a new election.
 
-## Role
+## Roles
 
 1. **Administrator**
    - **Tally Votes**: Calculates and decrypts the total votes to obtain election results.
