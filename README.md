@@ -59,7 +59,7 @@ When a vote is cast, it is added to the candidate's existing encrypted vote coun
    - **Tally Votes**: Calculates and decrypts the total votes to obtain election results.
    - **Oversee Elections**: Initiates new elections and resets the voting process when necessary.
 
-![admin_dashboard](https://github.com/user-attachments/assets/9b58639e-6f1b-4422-a3d2-5ffdda01bc95)
+![admin_dashboard](https://github.com/user-attachments/assets/ac20bdf3-cd8a-4fb1-a118-e48d35dbd241)
 This Image shows the Calculated Results.
     
 
@@ -67,7 +67,7 @@ This Image shows the Calculated Results.
    - **Run for Election**: Participates in elections as a candidate after registering themselves.
    - **View Results**: Accesses their own voting results after the tally is completed.
   
-![candidate_dashboard](https://github.com/user-attachments/assets/7d95f0e0-2f51-4e79-93e9-2cd7ae8acda6)
+![Candidate_dashboard](https://github.com/user-attachments/assets/6390807e-a639-45b7-92cf-cd8b4c1f499b)
 This Imgae showing the number of vote the Individual candidate has got.
 
 
@@ -75,7 +75,7 @@ This Imgae showing the number of vote the Individual candidate has got.
    - **Cast Vote**: Securely logs in to cast their vote for their preferred candidate.
    - **Voting Status**: Maintains a record of voting to ensure they can only vote once per election.
 
-![voter_dashboard](https://github.com/user-attachments/assets/de0e1106-4e6f-4f68-86ac-d01f5bd25243)
+![voter_dashboard](https://github.com/user-attachments/assets/e283a372-5340-4d2a-bf11-ada9dce313b8)
 This Imgae shows the option of candidates to vote.
 
 ## License
