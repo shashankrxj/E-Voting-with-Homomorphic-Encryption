@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .logout-button {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #d9534f; /* Red color for logout */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c; /* Darker red on hover */
+        }
+
+        .calculate-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #28a745; /* Green color for calculate */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calculate-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logout">
+        <form action="{{ url_for('logout') }}" method="POST">
+            <input type="hidden" name="user_type" value="admin">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+
+    <h1>Admin Dashboard</h1>
+
+    <!-- Election Results -->
+    <h2>Candidate Vote Totals</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate ID</th>
+                <th>Total Votes (Decrypted)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if results %}
+                {% for candidate_id, vote_count in results.items() %}
+                <tr>
+                    <td>{{ candidate_id }}</td>
+                    <td>{{ vote_count }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="2">Results not calculated yet. Click "Calculate Total Votes".</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- Calculate totals button (Only show if results are not calculated) -->
+    {% if not results %}
+    <form action="{{ url_for('calculate_totals') }}" method="POST">
+        <button type="submit" class="calculate-button">Calculate Total Votes</button>
+    </form>
+    {% endif %}
+
+</body>
+</html>

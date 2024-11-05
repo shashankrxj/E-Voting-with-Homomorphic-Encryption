@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .candidate {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .candidate h3 {
+            margin: 0 0 10px 0;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .logout button {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .logout button:hover {
+            background-color: #c9302c;
+        }
+        .message {
+            color: #28a745; /* Green for success messages */
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout">
+        <form action="{{ url_for('logout') }}" method="POST">
+            <input type="hidden" name="user_type" value="voter">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <h1>Welcome to the Voter Dashboard</h1>
+
+    <h2>Vote for Your Candidate</h2>
+    <form action="{{ url_for('cast_vote') }}" method="POST">
+        {% for candidate in candidates %}
+            <div class="candidate">
+                <h3>{{ candidate['user_id'] }}</h3>
+                <input type="radio" id="{{ candidate['user_id'] }}" name="candidate_id" value="{{ candidate['user_id'] }}" required>
+                <label for="{{ candidate['user_id'] }}">Select this candidate</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Cast Vote</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="message">
+                {% for category, message in messages %}
+                    {% if category == 'success' %}
+                        <p>{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

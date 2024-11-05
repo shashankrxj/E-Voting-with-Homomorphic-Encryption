@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 50px;
+            padding-bottom: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 60%; /* Set the width to 60% */
+            padding: 10px;
+            margin: 10px auto; /* Center the button */
+            border: none;
+            border-radius: 4px;
+            background: #5cb85c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: block; /* Make the button a block element to apply margin auto */
+        }
+
+        button:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Voter Login/Register</h2>
+        <form action="{{ url_for('login_register') }}" method="POST">
+            <input type="hidden" name="role" value="voter">
+    
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" name="action" value="login">Login</button>
+            <button type="submit" name="action" value="register">Register</button>
+        </form>
+
+        <button onclick="window.location.href='/'">Back to Main Menu</button>
+    </div>
+</body>
+</html>

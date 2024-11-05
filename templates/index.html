@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Who Are You?</h1>
+        <div class="options">
+            <button onclick="window.location.href='/admin'">Administrator</button>
+            <button onclick="window.location.href='/candidate'">Candidate</button>
+            <button onclick="window.location.href='/voter'">Voter</button>
+            
+            <!-- Use a form to handle the reset button with POST request -->
+            <form action="/reset" method="POST" style="display: inline;">
+                <button type="submit">Reset</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
