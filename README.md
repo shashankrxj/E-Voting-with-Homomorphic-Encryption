@@ -68,7 +68,7 @@ This Image shows the Calculated Results.
    - **View Results**: Accesses their own voting results after the tally is completed.
   
 ![Candidate_dashboard](https://github.com/user-attachments/assets/6390807e-a639-45b7-92cf-cd8b4c1f499b)
-This Imgae showing the number of vote the Individual candidate has got.
+This Image showing the number of vote the Individual candidate has got.
 
 
 3. **Voter**
@@ -76,7 +76,7 @@ This Imgae showing the number of vote the Individual candidate has got.
    - **Voting Status**: Maintains a record of voting to ensure they can only vote once per election.
 
 ![voter_dashboard](https://github.com/user-attachments/assets/e283a372-5340-4d2a-bf11-ada9dce313b8)
-This Imgae shows the option of candidates to vote.
+This Image shows the option of candidates to vote.
 
 ## License
 
