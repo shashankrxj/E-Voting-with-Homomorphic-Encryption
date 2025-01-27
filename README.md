@@ -81,7 +81,8 @@ This Image showing the number of vote the Individual candidate has got.
 This Image shows the option of candidates to vote.
 
 ## Result
-![Image](https://github.com/user-attachments/assets/a16f5613-c338-4c3a-9bf8-7ab742684b98)
+
+![Image](https://github.com/user-attachments/assets/cf561629-8c58-463f-8090-e09b7e39e9df)
 
 This table provides performance metrics for an E-voting system implemented with homomorphic encryption. The results were obtained by running the system with 10 candidates and varying the number of votes cast. The primary focus is on three performance indicators:
 
