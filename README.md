@@ -10,8 +10,10 @@ When a vote is cast, it is added to the candidate's existing encrypted vote coun
 3. [Installation & Setup](#installation--setup)
 4. [Usage Guide](#usage-guide)
 5. [Roles](#roles)
-6. [License](#license)
-7. [Contributing](#contributing)
+6. [Result](#result)
+7. [Scalability Analysis](#scalability-analysis)
+8. [License](#license)
+9. [Contributing](#contributing)
 
 ## Features
 
@@ -77,6 +79,33 @@ This Image showing the number of vote the Individual candidate has got.
 
 ![voter_dashboard](https://github.com/user-attachments/assets/e283a372-5340-4d2a-bf11-ada9dce313b8)
 This Image shows the option of candidates to vote.
+
+## Result
+![Image](https://github.com/user-attachments/assets/a16f5613-c338-4c3a-9bf8-7ab742684b98)
+
+This table provides performance metrics for an E-voting system implemented with homomorphic encryption. The results were obtained by running the system with 10 candidates and varying the number of votes cast. The primary focus is on three performance indicators:
+
+1. **Average Encryption Time (ms)**: This measures the time required to encrypt a single vote. As the number of votes increases, the encryption time slightly grows, reflecting the added computational overhead due to the volume of data being processed. For example, encrypting 100 votes takes an average of 433.45 ms, while encrypting 1000 votes requires 572.39 ms.
+
+2. **Average Update Time (ms)**: This represents the time required to update the aggregated encrypted vote data (such as adding a new encrypted vote to the tally). The system demonstrates efficient performance here, with negligible growth in update time as the number of votes increases. For instance, updating for 100 votes takes only 0.03 ms, compared to 0.17 ms for 1000 votes.
+
+3. **Decryption Time (ms)**: This shows the time required to decrypt and tally the votes. Decryption time increases with the number of votes cast, highlighting the computational demand for larger datasets. The time rises from 89.83 ms for 100 votes to 163.61 ms for 1000 votes.
+
+### Graphical Representation
+
+![Image](https://github.com/user-attachments/assets/cb98c6cd-b175-46fb-a4d3-3b5c49a8b87a)
+
+## Scalability Analysis
+
+The scalability of this E-voting system is evident from its performance metrics:
+
+1. **Linear Encryption Performance**: The encryption time grows proportionally with the number of votes, ensuring predictable performance as voter turnout increases.
+   
+2. **Minimal Update Overhead**: Real-time vote aggregation is highly optimized, resulting in almost negligible update times regardless of vote volume. This makes the system suitable for high-turnout elections.
+ 
+3. **Acceptable Decryption Time**: While decryption time increases with the dataset size, the performance remains within practical limits for most electoral scenarios.
+
+This system is well-suited for elections of varying sizes, from small-scale organizational votes to large national elections. However, further optimizations in encryption and decryption algorithms may be required for extremely large datasets to minimize computation time further.
 
 ## License
 
